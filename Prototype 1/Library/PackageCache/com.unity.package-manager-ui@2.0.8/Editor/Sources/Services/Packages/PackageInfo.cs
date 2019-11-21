@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Semver;
+using System.IO;
 
 namespace UnityEditor.PackageManager.UI
 {
@@ -119,9 +120,31 @@ namespace UnityEditor.PackageManager.UI
             return string.Format("http://docs.unity3d.com/Packages/{0}/index.html", ShortVersionId);
         }
 
+        public string GetOfflineDocumentationUrl()
+        {
+            var docsFolder = Path.Combine(Info.resolvedPath, "Documentation~");
+            if (!Directory.Exists(docsFolder))
+                docsFolder = Path.Combine(Info.resolvedPath, "Documentation");
+            if (Directory.Exists(docsFolder))
+            {
+                var mdFiles = Directory.GetFiles(docsFolder, "*.md", SearchOption.TopDirectoryOnly);
+                var docsMd = mdFiles.FirstOrDefault(d => Path.GetFileName(d).ToLower() == "index.md")
+                    ?? mdFiles.FirstOrDefault(d => Path.GetFileName(d).ToLower() == "tableofcontents.md") ?? mdFiles.FirstOrDefault();
+                if (!string.IsNullOrEmpty(docsMd))
+                    return new Uri(docsMd).AbsoluteUri;
+            }
+            return string.Empty;
+        }
+
         public string GetChangelogUrl()
         {
             return string.Format("http://docs.unity3d.com/Packages/{0}/changelog/CHANGELOG.html", ShortVersionId);
+        }
+
+        public string GetOfflineChangelogUrl()
+        {
+            var changelogFile = Path.Combine(Info.resolvedPath, "CHANGELOG.md");
+            return File.Exists(changelogFile) ? new Uri(changelogFile).AbsoluteUri : string.Empty;
         }
 
         public string GetLicensesUrl()
@@ -132,7 +155,13 @@ namespace UnityEditor.PackageManager.UI
 
             return url;
         }
-        
+
+        public string GetOfflineLicensesUrl()
+        {
+            var licenseFile = Path.Combine(Info.resolvedPath, "LICENSE.md");
+            return File.Exists(licenseFile) ? new Uri(licenseFile).AbsoluteUri : string.Empty;
+        }
+
         public bool Equals(PackageInfo other)
         {
             if (other == null) 

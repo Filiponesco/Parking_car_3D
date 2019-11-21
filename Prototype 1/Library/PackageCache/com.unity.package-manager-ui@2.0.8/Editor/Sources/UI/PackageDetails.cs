@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Semver;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.Experimental.UIElements;
 
 namespace UnityEditor.PackageManager.UI
@@ -584,21 +586,55 @@ namespace UnityEditor.PackageManager.UI
             RefreshRemoveButton();
             RefreshAddButton();
         }
-        
+
+        private static void ViewOfflineUrl(Func<string> getOfflineUrl, string messageOnNotFound)
+        {
+            var offlineUrl = getOfflineUrl();
+            if (!string.IsNullOrEmpty(offlineUrl))
+                Application.OpenURL(offlineUrl);
+            else
+                EditorUtility.DisplayDialog("Unity Package Manager", messageOnNotFound, "Ok");
+        }
+
+        private static void ViewUrl(Func<string> getUrl, Func<string> getOfflineUrl, string messageOnNotFound)
+        {
+            if (Application.internetReachability != NetworkReachability.NotReachable)
+            {
+                var onlineUrl = getUrl();
+                var request = UnityWebRequest.Head(onlineUrl);
+                var operation = request.SendWebRequest();
+                operation.completed += (op) =>
+                {
+                    if (request.responseCode != 404)
+                    {
+                        Application.OpenURL(onlineUrl);
+                    }
+                    else
+                    {
+                        ViewOfflineUrl(getOfflineUrl, messageOnNotFound);
+                    }
+                };
+            }
+            else
+
+            {
+                ViewOfflineUrl(getOfflineUrl, messageOnNotFound);
+            }
+        }
 
         private void ViewDocClick()
         {
-            Application.OpenURL(DisplayPackage.GetDocumentationUrl());
+            ViewUrl(DisplayPackage.GetDocumentationUrl, DisplayPackage.GetOfflineDocumentationUrl, "Unable to find documentation.");
         } 
 
         private void ViewChangelogClick()
         {
-            Application.OpenURL(DisplayPackage.GetChangelogUrl());
+            ViewUrl(DisplayPackage.GetChangelogUrl, DisplayPackage.GetOfflineChangelogUrl, "Unable to find changelog.");
         }
 
         private void ViewLicensesClick()
         {    
-            Application.OpenURL(DisplayPackage.GetLicensesUrl());            
+            ViewUrl(DisplayPackage.GetLicensesUrl, DisplayPackage.GetOfflineLicensesUrl, "Unable to find licenses.");
         }
         
         private Label DetailDesc { get { return root.Q<Label>("detailDesc"); } }

@@ -10,14 +10,20 @@ public class PlayerController : MonoBehaviour
     public Transform rearDriverT, rearPassengerT;
     public float maxSteerAngle = 30;
     public float motorForce = 50;
+    public float brakeForce;
+    public float maxSpeed;
+    public float currentSpeed;
 
     private float m_horizontalInput;
     private float m_verticalInput;
     private float m_steeringAngle;
+    private bool isBraking = false;
+
     public void GetInput()
     {
         m_horizontalInput = Input.GetAxis("Horizontal");
         m_verticalInput = Input.GetAxis("Vertical");
+        isBraking = Input.GetKey(KeyCode.Space);
     }
 
     private void Steer()
@@ -29,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     private void Accelerate()
     {
+        currentSpeed = 2 * Mathf.PI * frontDriverW.radius * frontDriverW.rpm * 60 / 1000;
         frontDriverW.motorTorque = m_verticalInput * motorForce;
         frontPassengerW.motorTorque = m_verticalInput * motorForce;
     }
@@ -51,12 +58,32 @@ public class PlayerController : MonoBehaviour
         _transform.position = _pos;
         _transform.rotation = _quat;
     }
-
+    private void Braking()
+    {
+        if (isBraking)
+        {
+            frontDriverW.brakeTorque = brakeForce;
+            frontPassengerW.brakeTorque = brakeForce;
+            rearDriverW.brakeTorque = brakeForce;
+            rearPassengerW.brakeTorque = brakeForce;
+        }
+        else
+        {
+            frontDriverW.brakeTorque = 0;
+            frontPassengerW.brakeTorque = 0;
+            rearDriverW.brakeTorque = 0;
+            rearPassengerW.brakeTorque = 0;
+        }
+    }
+    public void Start()
+    {
+    }
     private void FixedUpdate()
     {
         GetInput();
         Steer();
         Accelerate();
+        Braking();
         UpdateWheelPoses();
     }
 }
