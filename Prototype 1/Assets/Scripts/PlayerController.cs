@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     public float brakeForce;
     public float maxSpeed;
     public float currentSpeed;
+    public float m_Downforce = 100f;
+    public Texture normalTexture;
+    public Texture brakingTexture;
+    public Renderer carRenderer;
 
     private float m_horizontalInput;
     private float m_verticalInput;
@@ -66,6 +70,8 @@ public class PlayerController : MonoBehaviour
             frontPassengerW.brakeTorque = brakeForce;
             rearDriverW.brakeTorque = brakeForce;
             rearPassengerW.brakeTorque = brakeForce;
+
+            carRenderer.material.mainTexture = brakingTexture;
         }
         else
         {
@@ -73,7 +79,21 @@ public class PlayerController : MonoBehaviour
             frontPassengerW.brakeTorque = 0;
             rearDriverW.brakeTorque = 0;
             rearPassengerW.brakeTorque = 0;
+
+            carRenderer.material.mainTexture = normalTexture;
         }
+    }
+    // this is used to add more grip in relation to speed
+    private void AddDownForce()
+    {
+        frontDriverW.attachedRigidbody.AddForce(-transform.up * m_Downforce *
+                                                     frontDriverW.attachedRigidbody.velocity.magnitude);
+        frontPassengerW.attachedRigidbody.AddForce(-transform.up * m_Downforce *
+                                                     frontPassengerW.attachedRigidbody.velocity.magnitude);
+        rearDriverW.attachedRigidbody.AddForce(-transform.up * m_Downforce *
+                                                     rearDriverW.attachedRigidbody.velocity.magnitude);
+        rearPassengerW.attachedRigidbody.AddForce(-transform.up * m_Downforce *
+                                                     rearPassengerW.attachedRigidbody.velocity.magnitude);
     }
     public void Start()
     {
@@ -83,6 +103,7 @@ public class PlayerController : MonoBehaviour
         GetInput();
         Steer();
         Accelerate();
+        AddDownForce();
         Braking();
         UpdateWheelPoses();
     }
