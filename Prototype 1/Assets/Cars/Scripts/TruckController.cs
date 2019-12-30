@@ -66,7 +66,7 @@ namespace UnityStandardAssets.Vehicles.Car
             }
             //m_WheelColliders[0].attachedRigidbody.centerOfMass = m_CentreOfMassOffset;
 
-            m_MaxHandbrakeTorque = float.MaxValue;
+            //m_MaxHandbrakeTorque = float.MaxValue;
 
             m_Rigidbody = GetComponent<Rigidbody>();
             m_CurrentTorque = m_FullTorqueOverAllWheels - (m_TractionControl*m_FullTorqueOverAllWheels);
@@ -167,7 +167,6 @@ namespace UnityStandardAssets.Vehicles.Car
                 m_WheelColliders[3].brakeTorque = hbTorque;
             }
 
-
             CalculateRevs();
             GearChanging();
 
@@ -200,6 +199,11 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void ApplyDrive(float accel, float footbrake)
         {
+            //reset handbrake - can take a lot of computing power
+            m_WheelColliders[0].brakeTorque = 0;
+            m_WheelColliders[1].brakeTorque = 0;
+            m_WheelColliders[2].brakeTorque = 0;
+            m_WheelColliders[3].brakeTorque = 0;
 
             float thrustTorque;
             switch (m_CarDriveType)
