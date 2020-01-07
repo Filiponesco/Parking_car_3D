@@ -4,7 +4,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
-    [RequireComponent(typeof (CarController))]
+    [RequireComponent(typeof (TruckController))]
     public class TruckUserControl : MonoBehaviour
     {
         public TruckController m_Car; // the car controller we want to use
