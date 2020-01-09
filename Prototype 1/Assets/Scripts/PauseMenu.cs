@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public int actuallv = 1;
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -28,7 +29,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
-    void Pause()
+    public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
@@ -48,4 +49,47 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("QUIT");
         Application.Quit();
     }
+    public void Next1()
+    {
+        GameIsPaused = false;
+        SceneManager.LoadScene("City1");
+        SceneManager.LoadScene("Level2", LoadSceneMode.Additive);
+    }
+    public void Next2()
+    {
+        GameIsPaused = false;
+        SceneManager.LoadScene("City1");
+        SceneManager.LoadScene("Level3", LoadSceneMode.Additive);
+    }
+    public void Next3()
+    {
+        GameIsPaused = false;
+        SceneManager.LoadScene("City2");   
+    }
+
+    public void Restart1()
+    {
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        Debug.Log("Restart");
+        SceneManager.LoadScene("City1");
+        SceneManager.LoadScene("Level1", LoadSceneMode.Additive);
+    }
+    public void Restart2()
+    {
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        Debug.Log("Restart");
+        SceneManager.LoadScene("City1");
+        SceneManager.LoadScene("Level2", LoadSceneMode.Additive);
+    }
+    public void Restart3()
+    {
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        Debug.Log("Restart");
+        SceneManager.LoadScene("City1");
+        SceneManager.LoadScene("Level3", LoadSceneMode.Additive);
+    }
+
 }

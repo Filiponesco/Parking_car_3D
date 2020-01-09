@@ -12,6 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/City1.unity
     guid: 058b4d6703d31b848bdc8c0d7e94f429
   - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: a18195fade7e2354b8ef7e3b793dda02
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 04b6ae03d7b97ab428935e257b353894
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: e59eb8f54d3a74c4d83ce14ce0c0fa2f
+  - enabled: 1
     path: Assets/Scenes/City2.unity
     guid: 4d233f074b0a10a49978b726e0e0cf3b
+  - enabled: 1
+    path: Assets/Scenes/FreeRoam1.unity
+    guid: bdc09c28f98e688469c1cbaf37be7820
+  - enabled: 1
+    path: Assets/Scenes/FreeRoam2.unity
+    guid: 9ed0df8b2b5d3b540bff39658e538d26
   m_configObjects: {}

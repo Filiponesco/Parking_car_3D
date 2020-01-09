@@ -313,6 +313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 226232483}
+  - component: {fileID: 226232484}
   m_Layer: 5
   m_Name: PlayMenu
   m_TagString: Untagged
@@ -342,6 +343,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 480.6, y: 379.2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &226232484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226232482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6bdc1ac0f068924f9e3ac6ddb02246c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  city: {fileID: 0}
 --- !u!1 &279024577
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,6 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6bdc1ac0f068924f9e3ac6ddb02246c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  city: {fileID: 0}
 --- !u!114 &279024580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a15d723a4e7f6945848cda1af493b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  city: {fileID: 0}
 --- !u!1 &322887658
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,7 +800,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 279024580}
+      - m_Target: {fileID: 614162121}
         m_MethodName: FreeRoam2
         m_Mode: 1
         m_Arguments:
@@ -927,6 +941,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 614162120}
+  - component: {fileID: 614162121}
   m_Layer: 5
   m_Name: PlayLevel
   m_TagString: Untagged
@@ -956,6 +971,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 480.6, y: 379.2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &614162121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614162119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6bdc1ac0f068924f9e3ac6ddb02246c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  city: {fileID: 0}
 --- !u!1 &628767410
 GameObject:
   m_ObjectHideFlags: 0
@@ -2324,7 +2352,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 279024580}
+      - m_Target: {fileID: 614162121}
         m_MethodName: FreeRoam1
         m_Mode: 1
         m_Arguments:
@@ -3186,7 +3214,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 279024580}
+      - m_Target: {fileID: 226232484}
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
