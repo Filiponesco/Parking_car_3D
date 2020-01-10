@@ -79,6 +79,24 @@ public class PauseMenu : MonoBehaviour
     {
         GameIsPaused = false;
         SceneManager.LoadScene("City2");
+        SceneManager.LoadScene("Level6", LoadSceneMode.Additive);
+    }
+    public void Next6()
+    {
+        GameIsPaused = false;
+        SceneManager.LoadScene("City2");
+        SceneManager.LoadScene("Level7", LoadSceneMode.Additive);
+    }
+    public void Next7()
+    {
+        GameIsPaused = false;
+        SceneManager.LoadScene("City2");
+        SceneManager.LoadScene("Level8", LoadSceneMode.Additive);
+    }
+    public void Next8()
+    {
+        GameIsPaused = false;
+        SceneManager.LoadScene("Finish");
     }
 
     public void Restart1()
@@ -120,6 +138,30 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Restart");
         SceneManager.LoadScene("City1");
         SceneManager.LoadScene("Level5", LoadSceneMode.Additive);
+    }
+    public void Restart6()
+    {
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        Debug.Log("Restart");
+        SceneManager.LoadScene("City2");
+        SceneManager.LoadScene("Level6", LoadSceneMode.Additive);
+    }
+    public void Restart7()
+    {
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        Debug.Log("Restart");
+        SceneManager.LoadScene("City2");
+        SceneManager.LoadScene("Level7", LoadSceneMode.Additive);
+    }
+    public void Restart8()
+    {
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        Debug.Log("Restart");
+        SceneManager.LoadScene("City2");
+        SceneManager.LoadScene("Level8", LoadSceneMode.Additive);
     }
 
 }
