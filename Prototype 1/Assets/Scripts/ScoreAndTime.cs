@@ -41,7 +41,7 @@ public class ScoreAndTime : MonoBehaviour
             if (time < 0)
             {
                 timeText.text = "";
-                finalText.text = "Game Over";
+                finalText.text = "Game Over. Follow coins!";
                 MainPanel.SetActive(false);
                 LosePanel.SetActive(true);
                 Time.timeScale = 0f;
