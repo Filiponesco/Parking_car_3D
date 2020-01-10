@@ -436,7 +436,6 @@ GameObject:
   - component: {fileID: 1245645046807773085}
   - component: {fileID: 7579056757185556416}
   - component: {fileID: 5394823877640573482}
-  - component: {fileID: 5478302131116347180}
   m_Layer: 8
   m_Name: BrakeLight
   m_TagString: Untagged
@@ -503,23 +502,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &5478302131116347180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2974741849855253313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 8b09a6177a4ec4a4da7c6ed6be37b87e, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!1 &3234988807572969032
 GameObject:
   m_ObjectHideFlags: 0

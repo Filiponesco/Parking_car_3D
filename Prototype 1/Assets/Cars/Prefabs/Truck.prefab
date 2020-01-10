@@ -64,8 +64,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273100917793328099}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.39, y: 5.03, z: 5.47}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9180816234325207020}
@@ -74,10 +74,10 @@ Transform:
   - {fileID: 2990410016615323335}
   - {fileID: 1030917867452736537}
   - {fileID: 2024775875138321740}
-  - {fileID: 2663048958343815388}
+  - {fileID: 9139317014982192367}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6118516282057939913
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5437,36 +5437,6 @@ Transform:
   m_Father: {fileID: 4345703259649993822}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4149995936232295672
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7596103676402011156}
-  m_Layer: 0
-  m_Name: HelpFollowCamera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7596103676402011156
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4149995936232295672}
-  m_LocalRotation: {x: -0.05547896, y: -0.6382241, z: 0.30441737, w: 0.70492697}
-  m_LocalPosition: {x: 2.7500055, y: 4.030525, z: 6.541076}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2663048958343815388}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 21, y: 0, z: 0}
 --- !u!1 &4153917549610966266
 GameObject:
   m_ObjectHideFlags: 0
@@ -5499,6 +5469,36 @@ Transform:
   m_Father: {fileID: 4345703259649993822}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &4804194857195458096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9139317014982192367}
+  m_Layer: 0
+  m_Name: HelpFollowCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9139317014982192367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4804194857195458096}
+  m_LocalRotation: {x: 0.121749364, y: -0.69654655, z: -0.121749364, w: 0.69654655}
+  m_LocalPosition: {x: -0.01000023, y: 5.1000085, z: -8.410065}
+  m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_Children: []
+  m_Father: {fileID: 4345703259649993822}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: -19.829}
 --- !u!1 &5446633838334870458
 GameObject:
   m_ObjectHideFlags: 0
@@ -5969,8 +5969,7 @@ GameObject:
   - component: {fileID: 3578772425461687784}
   - component: {fileID: 3521610700523905348}
   - component: {fileID: 8821565233845563479}
-  - component: {fileID: 8246858166468851677}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: LightBrakeL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6036,23 +6035,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &8246858166468851677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8246858166468851673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 60b1962b28faec24c8d5e701d66a9f64, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!1 &8246858167063699176
 GameObject:
   m_ObjectHideFlags: 0
@@ -6064,8 +6046,7 @@ GameObject:
   - component: {fileID: 2660332905431079030}
   - component: {fileID: 3279696912563065176}
   - component: {fileID: 6621871901064494410}
-  - component: {fileID: 8246858167063699180}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: LightBrakeR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6131,23 +6112,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &8246858167063699180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8246858167063699176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 60b1962b28faec24c8d5e701d66a9f64, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!1 &8306149207946828168
 GameObject:
   m_ObjectHideFlags: 0
@@ -6494,78 +6458,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 30db758ccc339d848a49182b2045f57f, type: 3}
   skidParticles: {fileID: 0}
---- !u!1001 &724804448135102029
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4345703259649993822}
-    m_Modifications:
-    - target: {fileID: 3385028125031767697, guid: 695c18d95bb18eb479bde2174bfb45d8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385028125031767697, guid: 695c18d95bb18eb479bde2174bfb45d8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385028125031767697, guid: 695c18d95bb18eb479bde2174bfb45d8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385028125031767697, guid: 695c18d95bb18eb479bde2174bfb45d8,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.18301274
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385028125031767697, guid: 695c18d95bb18eb479bde2174bfb45d8,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.6830127
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385028125031767697, guid: 695c18d95bb18eb479bde2174bfb45d8,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.18301274
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385028125031767697, guid: 695c18d95bb18eb479bde2174bfb45d8,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6830127
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385028125031767697, guid: 695c18d95bb18eb479bde2174bfb45d8,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385028125031767697, guid: 695c18d95bb18eb479bde2174bfb45d8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385028125031767697, guid: 695c18d95bb18eb479bde2174bfb45d8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385028125031767697, guid: 695c18d95bb18eb479bde2174bfb45d8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385028125031767709, guid: 695c18d95bb18eb479bde2174bfb45d8,
-        type: 3}
-      propertyPath: m_Name
-      value: CameraFollowCar
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 695c18d95bb18eb479bde2174bfb45d8, type: 3}
---- !u!4 &2663048958343815388 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3385028125031767697, guid: 695c18d95bb18eb479bde2174bfb45d8,
-    type: 3}
-  m_PrefabInstance: {fileID: 724804448135102029}
-  m_PrefabAsset: {fileID: 0}
